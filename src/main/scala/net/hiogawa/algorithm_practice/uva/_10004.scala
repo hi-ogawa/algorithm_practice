@@ -3,25 +3,14 @@ package net.hiogawa.algorithm_practice.uva
 import scala.language.postfixOps
 import scalaz._
 
-// Problem: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=35&category=37&page=show_problem&problem=945
+// Problem:
+//   https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=35&category=37&page=show_problem&problem=945
+//   https://uva.onlinejudge.org/external/100/10004.pdf
 object _10004 {
   // NOTE: graph is bicolorable <-> graph is bipertite
   //  - start from any vertex and traverse a whole graph (preferrably dfs for simplicity reason)
   //    with labelling each vertex alternately
   //  - if you find conflict, then not bicolorable, else bicolorable
-
-  // References:
-  //  - http://docs.scala-lang.org/overviews/collections/iterators.html#buffered-iterators
-  //  - http://www.scala-lang.org/api/current/index.html#scala.Function2
-  //  - http://eed3si9n.com/learning-scalaz/Lens.html
-  //  - http://docs.scala-lang.org/overviews/core/string-interpolation.html
-
-  // TODO:
-  //  - each graph problem should be solved in parallell. Future could be it.
-  //  - think about the way everything is done one Iterator
-  //  - use existing iteratee library from play framework
-  //  - use existing graph library
-  //  - create github repository
 
   def solveFromString (input: String) : String = {
 
@@ -130,7 +119,6 @@ object _10004 {
     }
   }
   case class Node(label : Int, adjs: List[Int], visited: Boolean, color: Option[Int])
-  // NOTE: generate Lenses
   val nodeLabel = Lens.lensu[Node, Int](
     (a, value) => a.copy(label = value),
     _.label

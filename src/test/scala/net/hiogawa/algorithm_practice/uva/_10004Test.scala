@@ -84,7 +84,6 @@ BICOLORABLE.
   }
 
   "solve hard" >> {
-    // NOTE: get resource from resources directory
     val input = scala.io.Source.fromURL(getClass.getResource("/10004.input")).mkString
     val output = scala.io.Source.fromURL(getClass.getResource("/10004.output")).mkString
     _10004.solveFromString(input) must be_==(output)
