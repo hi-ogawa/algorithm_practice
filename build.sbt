@@ -21,7 +21,7 @@ lazy val root = (project in file(".")).
       "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
       "Sonatype OSS Releases" at "https://oss.sonatype.org/content/repositories/releases"
     ),
-    initialCommands := "import net.hiogawa.algorithm_practice",
+    initialCommands := "import net.hiogawa.algorithm_practice._",
     testFrameworks += new TestFramework("org.scalameter.ScalaMeterFramework"),
     parallelExecution in Test := false,
     logBuffered := false
